@@ -42,6 +42,19 @@ public class CompetenciaService {
 
         return competenciaMapper.toResponse(competencia, false);
     }
+    public Competencia createAndReturn(CompetenciaRequestDto dto) {
+        Optional<Competencia> duplicatedCompetencia = competenciaRepository.findByNome(dto.nome());
+
+        duplicatedCompetencia.ifPresent(competencia -> {
+            throw new DuplicatedCompetenciaException();
+        });
+
+        Competencia competencia = competenciaMapper.toEntity(dto);
+
+        competenciaRepository.save(competencia);
+
+        return competencia;
+    }
 
     public List<CompetenciaResponseDto> index() {
 

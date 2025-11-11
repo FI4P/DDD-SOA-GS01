@@ -51,8 +51,8 @@ public class TrilhaService {
         competenciasDto.forEach(compentencia -> {
             if(!competenciasExistentesStrings.contains(compentencia)){
                 CompetenciaRequestDto competenciaRequestDto = CompetenciaRequestDto.builder().nome(compentencia).categoria(compentencia).descricao(compentencia).build();
-                competenciaService.create(competenciaRequestDto);
-                competenciasExistentes.add(competenciaMapper.toEntity(competenciaRequestDto));
+                Competencia newCompentencia = competenciaService.createAndReturn(competenciaRequestDto);
+                competenciasExistentes.add(newCompentencia);
             }
         });
 
