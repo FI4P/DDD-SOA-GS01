@@ -1,0 +1,644 @@
+type: collection.insomnia.rest/5.0
+name: FIAP-ReUP
+meta:
+  id: wrk_fe272ddf0328417b8f8e3d51218d97ec
+  created: 1761578360309
+  modified: 1762834528791
+  description: ""
+collection:
+  - name: Users
+    meta:
+      id: fld_3774b29e6e524943be1a420f36ffe10d
+      created: 1760129155924
+      modified: 1762878856239
+      sortKey: -1760129155924
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_f0f0d61601b149d19ee90f6e81aece27
+          created: 1760129172103
+          modified: 1762888436388
+          isPrivate: false
+          description: ""
+          sortKey: -1760129172103
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Enzo de Oliveira Rodrigues",
+              "email": "enzo@gmail.com",
+              "nivelCarreira": "JUNIOR",
+              "areaAtuacao": "Tecnologia",
+              "roles": "ALUNO"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_acedff0e74df43549c2955886e739c4b
+          created: 1761581327453
+          modified: 1761581341929
+          isPrivate: false
+          description: ""
+          sortKey: -1759652346978
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/{% response 'body',
+          'req_f0f0d61601b149d19ee90f6e81aece27', 'b64::JC5pZA==::46b', 'never',
+          60 %}"
+        name: Show
+        meta:
+          id: req_7b5f19b20b934c7c8766d7e4c7f0bc60
+          created: 1762876129992
+          modified: 1762876270140
+          isPrivate: false
+          description: ""
+          sortKey: -1759413934415.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/1"
+        name: Update
+        meta:
+          id: req_676c6b04b4754879a920b9a57d7cc093
+          created: 1762877310259
+          modified: 1762877448928
+          isPrivate: false
+          description: ""
+          sortKey: -1759890759540.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_d00b566d80e44cb884734a9c744630e7
+          created: 1762877645437
+          modified: 1762877654615
+          isPrivate: false
+          description: ""
+          sortKey: -1759771553259.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    authentication:
+      type: bearer
+    environment:
+      RESOURCE: usuarios
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+  - name: Documentation
+    meta:
+      id: fld_f07cb8b90da640f2ba56abbd89944783
+      created: 1761581776280
+      modified: 1761581792333
+      sortKey: -1761581776280
+      description: ""
+    children:
+      - url: http://localhost:8080/swagger-ui/index.html
+        name: documentation
+        meta:
+          id: req_724938242c4146e3b9edc7a35a1a7282
+          created: 1761581700702
+          modified: 1761581781752
+          isPrivate: false
+          description: ""
+          sortKey: -1761581781710
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Trilhas
+    meta:
+      id: fld_7cd7026e43f344b3b46a074b70089175
+      created: 1762880478462
+      modified: 1762880494526
+      sortKey: -1760125263416
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_6589473e5c7747f78ee09658546bdbd1
+          created: 1762880478463
+          modified: 1762883886762
+          isPrivate: false
+          description: ""
+          sortKey: -1760129172103
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Iniciando com Java",
+              "descricao": "Trilha de Java",
+              "nivel": "INICIANTE",
+              "cargaHoraria": 50,
+              "focoPrincipal": "Java",	
+            	"competencias": "SQL,JAVA,LOGICA"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_12c1d211128b4aca9c909d6ee05931f3
+          created: 1762880478464
+          modified: 1762883399134
+          isPrivate: false
+          description: ""
+          sortKey: -1759652346978
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/{% response 'body',
+          'req_6589473e5c7747f78ee09658546bdbd1', 'b64::JC5pZA==::46b', 'never',
+          60 %}"
+        name: Show
+        meta:
+          id: req_8befbc1c0c524178851bef3025beb62a
+          created: 1762880478464
+          modified: 1762883397232
+          isPrivate: false
+          description: ""
+          sortKey: -1759413934415.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/52"
+        name: Delete
+        meta:
+          id: req_3b778987d7b842429282a2349be2e36a
+          created: 1762880478465
+          modified: 1762883395668
+          isPrivate: false
+          description: ""
+          sortKey: -1759771553259.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/202"
+        name: Update
+        meta:
+          id: req_ab1f0e6694cb4253a295c604c7f83231
+          created: 1762880478465
+          modified: 1762888751759
+          isPrivate: false
+          description: ""
+          sortKey: -1759890759540.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Iniciando com Java e Spring Boot",
+              "descricao": "Trilha de Java + Spring boot",
+              "nivel": "INTERMEDIARIO",
+              "cargaHoraria": 100,
+              "focoPrincipal": "Java, Spring Boot"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    authentication:
+      type: bearer
+    environment:
+      RESOURCE: trilhas
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+  - name: Competencias
+    meta:
+      id: fld_bcfbdf5a720f4a289e9945ab40845285
+      created: 1762889383570
+      modified: 1762889391903
+      sortKey: -1760123317162
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_52004b061fb24d37ae999233b0bec759
+          created: 1762889383571
+          modified: 1762889419705
+          isPrivate: false
+          description: ""
+          sortKey: -1760129172103
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "JS",
+              "descricao": "Competencia JS",
+              "categoria": "Programacao"
+              
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/{% response 'body',
+          'req_52004b061fb24d37ae999233b0bec759', 'b64::JC5pZA==::46b', 'never',
+          60 %}"
+        name: Show
+        meta:
+          id: req_0f8d4b40b3b9492a8cf155d2fa713a73
+          created: 1762889383573
+          modified: 1762889447840
+          isPrivate: false
+          description: ""
+          sortKey: -1759413934415.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_27b29299dd004e8291de0fe5d414ad65
+          created: 1762889383573
+          modified: 1762889383573
+          isPrivate: false
+          description: ""
+          sortKey: -1759652346978
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/252"
+        name: Delete
+        meta:
+          id: req_ca23f2aed24f47df8aa2d43ae9177fc9
+          created: 1762889383573
+          modified: 1762889786179
+          isPrivate: false
+          description: ""
+          sortKey: -1759771553259.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/{% response 'body',
+          'req_52004b061fb24d37ae999233b0bec759', 'b64::JC5pZA==::46b', 'never',
+          60 %}"
+        name: Update
+        meta:
+          id: req_3f882a16ca0f4754bd9e7f2b27bd7dac
+          created: 1762889383574
+          modified: 1762889482645
+          isPrivate: false
+          description: ""
+          sortKey: -1759890759540.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Iniciando com Java e Spring Boot",
+              "descricao": "Trilha de Java + Spring boot",
+              "categoria": "INTERMEDIARIO"
+
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    authentication:
+      type: bearer
+    environment:
+      RESOURCE: competencias
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+  - name: Matriculas
+    meta:
+      id: fld_2777e26db00246e8856c95e67b1e0b11
+      created: 1762890828317
+      modified: 1762891041969
+      sortKey: -1760122344035
+      description: ""
+    children:
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_195f9e51c9ee416a95fff7da99b03a51
+          created: 1762890828318
+          modified: 1762891021443
+          isPrivate: false
+          description: ""
+          sortKey: -1760129172103
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "trilhaId": {% response 'body', 'req_6589473e5c7747f78ee09658546bdbd1', 'b64::JC5pZA==::46b', 'never', 60 %},
+            	"usuarioId": {% response 'body', 'req_f0f0d61601b149d19ee90f6e81aece27', 'b64::JC5pZA==::46b', 'never', 60 %}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/2"
+        name: Delete
+        meta:
+          id: req_3b013f2d70a7474e8c8f9197bf36aada
+          created: 1762890828319
+          modified: 1762891163169
+          isPrivate: false
+          description: ""
+          sortKey: -1759771553259.25
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_591e17beecd04eab93089b6b806cda6f
+          created: 1762890828319
+          modified: 1762890828319
+          isPrivate: false
+          description: ""
+          sortKey: -1759652346978
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}{{ _.RESOURCE }}/{% response 'body',
+          'req_195f9e51c9ee416a95fff7da99b03a51', 'b64::JC5pZA==::46b', 'never',
+          60 %}"
+        name: Show
+        meta:
+          id: req_757b2dc17ab64cbb9fdd35a49760dd9c
+          created: 1762890828319
+          modified: 1762891136938
+          isPrivate: false
+          description: ""
+          sortKey: -1759413934415.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    authentication:
+      type: bearer
+    environment:
+      RESOURCE: matriculas
+    environmentPropertyOrder:
+      "&":
+        - RESOURCE
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_58bf3b8d7cc1495f87db1a7faf747f74
+    created: 1758750823478
+    modified: 1761263404880
+  cookies:
+    - id: cc431193-87e6-42a4-ae0d-167e96c50f20
+      key: JSESSIONID
+      value: 96C34CD6099D27C163E13A56CD1D3037
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: DEV
+  meta:
+    id: env_0520f6196ea2465b8308d465f90de77b
+    created: 1758750823477
+    modified: 1760974708819
+    isPrivate: false
+  data:
+    BASE_URL: http://localhost:8080/
